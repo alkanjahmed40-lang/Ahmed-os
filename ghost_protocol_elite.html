@@ -1,0 +1,861 @@
+<!-- ... existing code ... -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#030305" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="AhmadOS" />
+  <link rel="manifest" href="manifest.json" id="pwaManifestLink" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='44' fill='%23ff003c'/%3E%3Cpolygon points='72,52 138,96 72,140' fill='%23ffffff'/%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='44' fill='%23ff003c'/%3E%3Cpolygon points='72,52 138,96 72,140' fill='%23ffffff'/%3E%3C/svg%3E" />
+  <title>AhmadOS — Iron & 60-Day Command</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- ... existing code ... -->
+</head>
+<body>
+
+  <!-- Silent Dynamic Island Visual Reward (Says strictly "Thank you.") -->
+  <div class="dynamic-thank-you" id="thankYouIsland">
+    <div class="thank-you-orb">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <div style="min-width:0; flex:1;">
+      <div style="font-size:13px; font-weight:900; color:#fff;" id="islandTitle">Thank you.</div>
+      <div style="font-size:11px; color:var(--sub); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" id="islandSub">
+        Momentum is yours.
+      </div>
+    </div>
+  </div>
+
+  <!-- Spatial Top Bar -->
+<!-- ... existing code ... -->
+          <div class="bento-content" style="margin-top:10px;">
+            <div style="font-size:10.5px; color:#bae6fd; margin-bottom:7px;" id="bentoWaterSub">
+              4 × 850ml bottles left
+            </div>
+            <button class="action-tap-btn water-btn" style="width:100%; height:33px; font-size:11.5px;" onclick="tapHabitDone('h_water')">
+              💧 +850ml Bottle
+            </button>
+          </div>
+        </div>
+
+        <!-- Bento Right: Slide-1 Calibrated Speedrun OR Iron Split Quick Card -->
+        <div class="bento-tile bento-speedrun" id="bentoRightCard" onclick="handleRightBentoTap()">
+          <div class="bento-content" style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div>
+              <div style="font-size:10px; font-weight:900; color:#ff4d6d; letter-spacing:0.4px;" id="bentoRightTag">SLIDE-1 CHALLENGE</div>
+              <div class="mono" style="font-size:18px; font-weight:900; margin-top:2px;" id="bentoSpeedTimer">0h 40m</div>
+            </div>
+            <span class="mono" style="font-size:10px; font-weight:800; color:var(--emerald); background:var(--emerald-soft); padding:2px 6px; border-radius:99px;" id="bentoBankedBadge">1m/slide</span>
+          </div>
+
+          <div class="bento-content" style="margin-top:10px;">
+            <div style="font-size:10.5px; color:#fecdd3; margin-bottom:7px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" id="bentoSpeedSub">
+              Time Slide #1 ➔ Hours & Mins!
+            </div>
+            <button class="action-tap-btn" id="bentoRightBtn" style="width:100%; height:33px; font-size:11.5px; background:var(--yt-red); color:#fff;" onclick="event.stopPropagation(); handleRightBentoTap();">
+              ⚡ Probe Slide #1
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Automated Due Revisions Today Banner -->
+      <div id="homeDueRevisionsBox" style="margin: 0 14px 10px;"></div>
+
+      <!-- Clean Daily Habits Feed -->
+      <div class="feed-container" id="habitsFeedList"></div>
+    </div>
+
+    <!-- ==================== TAB 2: SLIDE-1 CALIBRATED LECTURE SPEEDRUN (HOURS & MINUTES) ==================== -->
+    <div id="tabSpeedrun" style="display:none; padding-top:12px;">
+      <div class="feed-container">
+
+        <!-- STEP 1: SLIDE #1 VELOCITY PROBE (MINUTES & HOURS) -->
+        <div class="habit-card" style="padding:15px; border-color:rgba(0, 210, 255, 0.35); background:linear-gradient(160deg, rgba(8, 33, 48, 0.92) 0%, rgba(15, 17, 26, 0.96) 100%);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px;">
+            <div>
+              <span style="font-size:10px; font-weight:900; color:var(--cyan); letter-spacing:0.5px;">
+                STEP 1 • SLIDE #1 TIME (IN MINUTES)
+              </span>
+              <div style="font-size:15.5px; font-weight:900; margin-top:2px;">
+                Test Slide #1 First (Calculates Hours & Minutes)
+              </div>
+              <p style="font-size:11.5px; color:var(--sub); margin-top:3px; line-height:1.4;">
+                Time <strong>Slide #1</strong> with the stopwatch or enter how many <strong>minutes</strong> Slide #1 took. We convert the whole lecture into <strong>Hours & Minutes</strong> + how many 25-min blocks it takes!
+              </p>
+            </div>
+            <div class="mono" style="font-size:18px; font-weight:900; color:var(--cyan); background:rgba(0,210,255,0.12); padding:6px 11px; border-radius:12px; border:1px solid rgba(0,210,255,0.3); white-space:nowrap;" id="probeClockText">
+              1.0 min
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1.15fr 1fr; gap:8px; margin-top:12px;">
+            <button class="action-tap-btn water-btn" style="height:40px; font-size:12px;" id="probeBtn" onclick="toggleSlide1Probe()">
+              ⏱️ Start Slide #1 Timer
+            </button>
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:4px; background:rgba(0,0,0,0.45); border:1px solid var(--border-strong); border-radius:99px; padding:0 6px;">
+              <button class="mini-chip-btn" style="height:28px; padding:0 8px; border-radius:99px;" onclick="stepSlide1Minutes(-0.5)">-0.5m</button>
+              <div style="text-align:center;">
+                <input type="number" step="0.25" id="srInputSlide1Min" class="mono" style="width:48px; background:none; border:none; color:#fff; font-size:13px; font-weight:900; outline:none; text-align:center;" value="1" min="0.25" max="30" onchange="updateSpeedrunConfig()" />
+                <div style="font-size:8.5px; color:var(--sub); font-weight:800; margin-top:-2px;">MINS / SLIDE</div>
+              </div>
+              <button class="mini-chip-btn" style="height:28px; padding:0 8px; border-radius:99px;" onclick="stepSlide1Minutes(0.5)">+0.5m</button>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1.5fr 0.8fr; gap:8px; margin-top:10px;">
+            <div>
+              <label style="font-size:10px; color:var(--sub); font-weight:800;">LECTURE / LAB NAME</label>
+              <input type="text" id="srInputTitle" class="yt-input" style="margin-top:3px; padding:8px 10px; font-size:12px;" value="Pharmacology — Lec 1" onchange="updateSpeedrunConfig()" />
+            </div>
+            <div>
+              <label style="font-size:10px; color:var(--sub); font-weight:800;">TOTAL SLIDES</label>
+              <input type="number" id="srInputTotal" class="yt-input mono" style="margin-top:3px; padding:8px 10px; font-size:12px;" value="40" min="1" max="500" onchange="updateSpeedrunConfig()" />
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: WHOLE-LECTURE CHALLENGE ARENA (HOURS & MINUTES + SESSIONS) -->
+        <div class="speedrun-hero-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <div>
+              <span style="font-size:10px; font-weight:900; color:#ff4d6d; letter-spacing:0.5px;">
+                STEP 2 • WHOLE-LECTURE HOURS & MINUTES
+              </span>
+              <div style="font-size:16px; font-weight:900; margin-top:2px;" id="srActiveTitle">
+                Pharmacology — Lec 1
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:10px; color:var(--sub); font-weight:700;">TIME SAVED</div>
+              <div class="mono" style="font-size:14px; font-weight:900; color:var(--emerald);" id="srTotalBankedText">⚡ +0m</div>
+            </div>
+          </div>
+
+          <div style="background:rgba(0,0,0,0.46); border:1px solid var(--border-strong); border-radius:14px; padding:10px 12px; display:flex; flex-direction:column; gap:5px; margin-bottom:12px;">
+            <div style="display:flex; align-items:center; justify-content:space-between;">
+              <span style="font-size:11.5px; color:var(--sub);">
+                <strong style="color:var(--cyan);" id="srFormulaSlide1">1.0 min / slide</strong> × <strong style="color:#fff;" id="srFormulaSlides">40 slides</strong>
+              </span>
+              <span class="mono" style="font-size:13px; font-weight:900; color:var(--amber);" id="srTotalPredictedText">
+                Total = 0h 40m
+              </span>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; font-size:11px; color:#c4b5fd; border-top:1px solid rgba(255,255,255,0.07); padding-top:5px;">
+              <span>⚡ 25-Min Momentum Blocks (5×5m):</span>
+              <strong class="mono" id="srBlocksCountText">1.6 Blocks (2 Sessions)</strong>
+            </div>
+          </div>
+
+          <div style="text-align:center; padding:6px 0 12px;">
+            <div style="display:inline-flex; align-items:center; gap:6px; background:var(--surface-2); border:1px solid var(--border-strong); padding:4px 12px; border-radius:99px; font-size:11.5px; font-weight:800; color:#ff4d6d; margin-bottom:8px;" id="srCurrentSprintBadge">
+              Slide 1 of 40 • Target: 1.0 min/slide
+            </div>
+            <div class="mono" style="font-size:40px; font-weight:900; letter-spacing:-1px; line-height:1.05;" id="srClockDisplay">
+              0h 40m 00s
+            </div>
+            <div style="font-size:11.5px; color:var(--sub); margin-top:6px;" id="srClockSubPrompt">
+              Finish slides faster than your Slide #1 pace to beat the challenge!
+            </div>
+          </div>
+<!-- ... existing code ... -->
+      <button class="yt-tab-btn" id="dockBtnVault" onclick="switchTab('vault')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+        <span>60d Vault</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== SHEETS & MODALS ==================== -->
+<!-- ... existing code ... -->
+  <!-- Settings, Pure Gym Mode & GitHub PWA Publishing Sheet -->
+  <div class="sheet-backdrop" id="settingsSheet" onclick="if(event.target===this)closeSheet('settingsSheet')">
+    <div class="sheet-box">
+      <div class="sheet-handle"></div>
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+        <div style="font-size:16px; font-weight:800;">⚙️ Settings, Gym-Only App & PWA Publish</div>
+        <button class="mini-chip-btn" onclick="closeSheet('settingsSheet')">✕</button>
+      </div>
+
+      <!-- 1. Native PWA Install Banner (Activates automatically on https://) -->
+      <div style="background:linear-gradient(135deg, rgba(0,229,153,0.18), rgba(5,150,105,0.1)); border:1px solid rgba(0,229,153,0.4); border-radius:16px; padding:14px; margin-bottom:12px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+          <div style="font-size:14px; font-weight:900; color:var(--emerald);">📲 Installable PWA Status (manifest.json + sw.js)</div>
+          <span class="live-pill" id="swStatusPill">SW READY</span>
+        </div>
+        <p style="font-size:11.5px; color:var(--sub); line-height:1.45; margin-bottom:10px;">
+          Linked to <code class="mono">manifest.json</code> and <code class="mono">sw.js</code> Service Worker for offline caching & Home Screen installation.
+        </p>
+        <button class="action-tap-btn" id="nativePwaInstallBtn" style="width:100%; height:42px; background:var(--emerald); color:#022c22; font-weight:900;" onclick="triggerNativePwaInstall()">
+          📲 Install App to Home Screen
+        </button>
+      </div>
+
+      <!-- 2. Pure Gym-Only App Mode (Hides Study/Lectures & Focuses 100% on Iron + 60d Lifestyle) -->
+      <div style="background:linear-gradient(135deg, rgba(255,0,60,0.16), rgba(159,18,57,0.1)); border:1px solid rgba(255,0,60,0.38); border-radius:16px; padding:14px; margin-bottom:12px;">
+        <div style="font-size:14px; font-weight:900; color:#ff4d6d; margin-bottom:4px;">🏋️ Pure Gym & 60-Day Lifestyle App Mode</div>
+        <p style="font-size:11.5px; color:var(--sub); line-height:1.45; margin-bottom:10px;">
+          Want an app dedicated <strong>100% to Gym (Sun•Tue•Thu), 3L Water, Wakeup, 10,000 Steps/Walks, 140g Protein & 60-Day Vault</strong> without any study/lecture tabs? Toggle it live or download it as a separate Gym-only <code class="mono">index.html</code>!
+        </p>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <button class="action-tap-btn" id="gymOnlyModeBtn" style="width:100%; height:40px; background:var(--yt-red); color:#fff;" onclick="toggleGymOnlyMode()">
+            🏋️ Switch to Pure Gym-Only Mode: OFF
+          </button>
+          <button class="mini-chip-btn" style="height:38px; justify-content:center; width:100%; border-color:rgba(255,0,60,0.4); color:#fecdd3;" onclick="downloadGymOnlyIndexHtml()">
+            📥 Download Separate Gym-Only App (index.html)
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. 1-Click Download All 3 PWA Files + Direct GitHub API Auto-Publisher -->
+      <div style="background:linear-gradient(135deg, rgba(59,130,246,0.15), rgba(139,92,246,0.1)); border:1px solid rgba(59,130,246,0.35); border-radius:16px; padding:14px; margin-bottom:12px;">
+        <div style="font-size:14px; font-weight:900; color:var(--cyan); margin-bottom:4px;">🚀 GitHub Pages PWA Publisher (3 Files)</div>
+        <p style="font-size:11.5px; color:var(--sub); line-height:1.45; margin-bottom:10px;">
+          To make Chrome show the native <strong>"Install App"</strong> button on your <code class="mono">https://</code> GitHub Pages link, upload these 3 files to your repository—or use the automatic GitHub publisher below:
+        </p>
+        <div style="display:grid; grid-template-columns:1fr; gap:7px; margin-bottom:12px;">
+          <button class="action-tap-btn" style="width:100%; height:40px; background:var(--blue); color:#fff;" onclick="downloadAllThreePwaFiles()">
+            📦 Download All 3 PWA Files (index.html + manifest.json + sw.js)
+          </button>
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px;">
+            <button class="mini-chip-btn" style="justify-content:center; height:34px;" onclick="downloadIndexHtmlFile()">📥 index.html</button>
+            <button class="mini-chip-btn" style="justify-content:center; height:34px;" onclick="downloadManifestFile()">📥 manifest.json</button>
+            <button class="mini-chip-btn" style="justify-content:center; height:34px;" onclick="downloadSwFile()">📥 sw.js</button>
+          </div>
+        </div>
+
+        <!-- Direct In-App GitHub Auto-Deployer -->
+        <div style="border-top:1px solid var(--border-strong); padding-top:10px; margin-top:4px;">
+          <div style="font-size:12px; font-weight:800; color:#fff; margin-bottom:6px;">⚡ Direct Auto-Publish to Your GitHub Repo</div>
+          <div style="display:flex; flex-direction:column; gap:7px;">
+            <input type="text" id="ghUsernameInput" class="yt-input" style="padding:8px 10px; font-size:12px;" placeholder="GitHub Username (e.g. ahmad-alkanj)" />
+            <input type="text" id="ghRepoInput" class="yt-input" style="padding:8px 10px; font-size:12px;" value="ahmados" placeholder="Repository Name (e.g. ahmados)" />
+            <input type="password" id="ghTokenInput" class="yt-input mono" style="padding:8px 10px; font-size:12px;" placeholder="GitHub Personal Access Token (ghp_...)" />
+            <button class="action-tap-btn" style="width:100%; height:40px; background:linear-gradient(135deg, #8b5cf6, #3b82f6); color:#fff;" onclick="autoPublishToGitHubPages()">
+              🚀 Auto-Push index.html + manifest.json + sw.js to GitHub
+            </button>
+            <div id="ghPublishStatus" style="font-size:11.5px; color:var(--emerald); display:none; line-height:1.4; margin-top:4px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. App Controls & Additions -->
+      <div style="background:var(--surface); border:1px solid var(--border-strong); border-radius:16px; padding:14px; margin-bottom:10px;">
+        <div style="font-size:13.5px; font-weight:800; margin-bottom:8px;">📱 Custom Habits & Exercises</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <button class="mini-chip-btn" style="height:36px; justify-content:center;" onclick="closeSheet('settingsSheet'); openSheet('addHabitSheet');">+ New Habit</button>
+          <button class="mini-chip-btn" style="height:36px; justify-content:center;" onclick="closeSheet('settingsSheet'); openSheet('addExSheet');">+ New Exercise</button>
+        </div>
+      </div>
+
+      <!-- 5. Backup & Reset -->
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:14px;">
+        <div style="font-size:13px; font-weight:700; margin-bottom:8px;">🔄 Data & Backup</div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <button class="mini-chip-btn" style="height:36px; justify-content:center;" onclick="copyBackupToClipboard()">
+            📋 Copy Backup to Clipboard
+          </button>
+          <button class="mini-chip-btn" style="height:36px; justify-content:center; color:#ff4d6d;" onclick="restoreDefaultHabitsAndExercises()">
+            ♻️ Restore Default Habits & Exercises
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- ... existing code ... -->
+    const DEFAULT_HABITS = [
+      { id: 'h_water', iconKey: 'water', name: 'Daily Water Target (3 Liters / 3000 ml)', target: 3000, unit: 'ml', step: 850, schedule: 'daily', tip: 'Tap +850ml every time you finish a bottle (850 ➔ 1700 ➔ 2550 ➔ 3000ml).' },
+      { id: 'h_sleep_wave', iconKey: 'moon', name: 'Pre-Fajr Wakeup (1h Early) & 7h Sleep Wave', target: 1, unit: 'done', step: 1, schedule: 'daily', tip: 'Sleep 7h before target wake-up (08:45 PM for 03:45 AM).' },
+      { id: 'h_dry_cutoff', iconKey: 'shield', name: '2-Hour Pre-Bed No Food & No Water Cutoff', target: 1, unit: 'locked', step: 1, schedule: 'daily', tip: 'Zero food or water 2 hours before sleep.' },
+      { id: 'h_study', iconKey: 'study', name: 'Active Recall Lectures (3 Categories via Speedrun)', target: 3, unit: 'lectures', step: 1, schedule: 'daily', isStudyHabit: true, tip: 'Time Slide #1 in minutes ➔ Race the whole-lecture challenge clock!' },
+      { id: 'h_walk', iconKey: 'walk', name: '10,000 Steps / Treadmill Walk (3 × 30m)', target: 3, unit: 'walks', step: 1, schedule: 'daily', tip: 'Step on the belt or walk outside for just the first 5 minutes.' },
+      { id: 'h_protein', iconKey: 'protein', name: 'Daily Protein Floor (140g)', target: 140, unit: 'g', step: 35, schedule: 'daily', tip: 'Split across 2 meals (max 70g per meal).' },
+      { id: 'h_gym', iconKey: 'iron', name: 'Iron Split Session (Sun • Tue • Thu Only)', target: 1, unit: 'session', step: 1, schedule: 'gym3d', tip: '3 days/week = 12/month = 24 sessions per 60-day streak.' }
+    ];
+<!-- ... existing code ... -->
+    let state = {
+      selectedDate: TODAY_YMD,
+      weekOffset: 0,
+      activeTab: 'home',
+      gymOnlyMode: false,
+      gymSplit: 'thursday',
+      vaultSubTab: 's60',
+      calYear: 2026,
+      calMonth: 9,
+      fourYearStart: 2026,
+      deloadActive: false,
+      autoFullscreen: true,
+      wakeTime: '03:45',
+      notifTime: '20:00',
+      notifWaterFreq: 120,
+      body: { weight: 82.0, smm: 35.0, targetSmm: 42.0 },
+      speedrun: {
+        title: 'Pharmacology II — Lec 1',
+        totalSlides: 40,
+        slide1Minutes: 1.0,
+        slide1Seconds: 60,
+        currentSlide: 1,
+        bankedSeconds: 0,
+        linkedSem: 5,
+        linkedSubId: 's5_sub1',
+        linkedUnitKey: 'lec_1',
+        completedCategories: []
+      },
+      pharmacy: buildDefaultPharmacyCurriculum(),
+      habits: JSON.parse(JSON.stringify(DEFAULT_HABITS)),
+      logs: {},
+      manualResetDates: {},
+      auditedMissedDays: {},
+      exercises: JSON.parse(JSON.stringify(DEFAULT_EXERCISES)),
+      gymLogs: {}
+    };
+<!-- ... existing code ... -->
+    let srTimer = { secondsLeft: 2400, running: false, intervalId: null };
+    let probeTimer = { secondsElapsed: 0, running: false, intervalId: null };
+
+    function getSpeedrunState() {
+      if (!state.speedrun) {
+        state.speedrun = { title: 'Pharmacology II — Lec 1', totalSlides: 40, slide1Minutes: 1.0, slide1Seconds: 60, currentSlide: 1, bankedSeconds: 0, completedCategories: [] };
+      }
+      if (!state.speedrun.slide1Minutes && state.speedrun.slide1Seconds) {
+        state.speedrun.slide1Minutes = Math.round((state.speedrun.slide1Seconds / 60) * 100) / 100;
+      }
+      if (!state.speedrun.slide1Minutes) state.speedrun.slide1Minutes = 1.0;
+      state.speedrun.slide1Seconds = Math.max(5, Math.round(state.speedrun.slide1Minutes * 60));
+      if (!state.speedrun.currentSlide) state.speedrun.currentSlide = 1;
+      return state.speedrun;
+    }
+
+    // Format seconds cleanly into Hours & Minutes (e.g., "1h 20m" or "0h 40m")
+    function formatHoursMinutes(sec) {
+      const s = Math.max(0, Math.round(sec));
+      const hours = Math.floor(s / 3600);
+      const mins = Math.floor((s % 3600) / 60);
+      return `${hours}h ${String(mins).padStart(2, '0')}m`;
+    }
+
+    // Format countdown clock with Hours, Minutes, and Seconds (e.g., "0h 40m 00s")
+    function formatClockHMS(sec) {
+      const s = Math.max(0, Math.round(sec));
+      const hours = Math.floor(s / 3600);
+      const mins = Math.floor((s % 3600) / 60);
+      const remSec = s % 60;
+      return `${hours}h ${String(mins).padStart(2, '0')}m ${String(remSec).padStart(2, '0')}s`;
+    }
+
+    function formatBankedTime(sec) {
+      const s = Math.max(0, Math.round(sec));
+      const h = Math.floor(s / 3600);
+      const m = Math.floor((s % 3600) / 60);
+      if (h > 0) return `+${h}h ${m}m`;
+      return `+${m}m`;
+    }
+
+    window.stepSlide1Minutes = function(deltaMin) {
+      const sr = getSpeedrunState();
+      const nextMin = Math.max(0.25, Math.min(30, Math.round((sr.slide1Minutes + deltaMin) * 4) / 4));
+      sr.slide1Minutes = nextMin;
+      sr.slide1Seconds = Math.round(nextMin * 60);
+      const inputEl = document.getElementById('srInputSlide1Min');
+      if (inputEl) inputEl.value = nextMin;
+      srTimer.secondsLeft = sr.totalSlides * sr.slide1Seconds;
+      commitState();
+      renderSpeedrunEngine();
+    };
+
+    window.toggleSlide1Probe = function() {
+      const sr = getSpeedrunState();
+      const btn = document.getElementById('probeBtn');
+      if (probeTimer.running) {
+        clearInterval(probeTimer.intervalId);
+        probeTimer.running = false;
+        const measuredSec = Math.max(10, probeTimer.secondsElapsed);
+        const measuredMin = Math.round((measuredSec / 60) * 100) / 100;
+        sr.slide1Minutes = measuredMin;
+        sr.slide1Seconds = measuredSec;
+        sr.currentSlide = 2;
+        const remSlides = Math.max(1, sr.totalSlides - 1);
+        srTimer.secondsLeft = remSlides * measuredSec;
+        const minInput = document.getElementById('srInputSlide1Min');
+        if (minInput) minInput.value = measuredMin;
+        if (btn) btn.textContent = '⏱️ Re-Test Slide #1';
+        window.showSilentThankYou();
+        commitState();
+        renderSpeedrunEngine();
+      } else {
+        probeTimer.secondsElapsed = 0;
+        probeTimer.running = true;
+        if (btn) btn.textContent = '⏹️ Done Slide #1 (Lock Pace)';
+        probeTimer.intervalId = setInterval(() => {
+          probeTimer.secondsElapsed++;
+          const el = document.getElementById('probeClockText');
+          const minsFloat = (probeTimer.secondsElapsed / 60).toFixed(1);
+          if (el) el.textContent = `${minsFloat} min`;
+        }, 1000);
+      }
+    };
+
+    window.handleRightBentoTap = function() {
+      if (state.gymOnlyMode) {
+        switchTab('gym');
+      } else {
+        switchTab('speedrun');
+      }
+    };
+
+    function renderSpeedrunEngine() {
+      const sr = getSpeedrunState();
+      const totalSlides = Math.max(1, Number(sr.totalSlides || 40));
+      const slide1Min = Number(sr.slide1Minutes || 1.0);
+      const slide1Sec = Math.max(5, Math.round(slide1Min * 60));
+      if (sr.currentSlide > totalSlides) sr.currentSlide = totalSlides;
+
+      const totalChallengeSec = totalSlides * slide1Sec;
+      const totalChallengeMins = Math.round(totalChallengeSec / 60);
+      const blocks25Count = (totalChallengeMins / 25).toFixed(1);
+      const sessionsCount = Math.max(1, Math.ceil(totalChallengeMins / 25));
+
+      if (!srTimer.running && srTimer.secondsLeft > totalChallengeSec) {
+        srTimer.secondsLeft = totalChallengeSec;
+      }
+
+      // Update Right Bento Tile on Home Screen (Adapts to Gym-Only Mode vs Study Mode)
+      const bentoTag = document.getElementById('bentoRightTag');
+      const bentoTimer = document.getElementById('bentoSpeedTimer');
+      const bentoBanked = document.getElementById('bentoBankedBadge');
+      const bentoSub = document.getElementById('bentoSpeedSub');
+      const bentoBtn = document.getElementById('bentoRightBtn');
+
+      if (state.gymOnlyMode) {
+        const gymHabit = state.habits.find(h => h.id === 'h_gym') || DEFAULT_HABITS[6];
+        const st = getHabitStreakFast(gymHabit);
+        if (bentoTag) bentoTag.textContent = 'IRON 60-DAY STREAK';
+        if (bentoTimer) bentoTimer.textContent = `${st.inCycle} / 24`;
+        if (bentoBanked) bentoBanked.textContent = state.deloadActive ? 'DELOAD -40%' : '100% LOAD';
+        if (bentoSub) bentoSub.textContent = 'Sun • Tue • Thu (50% ➔ 70% ➔ 100%)';
+        if (bentoBtn) bentoBtn.textContent = '🏋️ Open Iron Split';
+      } else {
+        if (bentoTag) bentoTag.textContent = 'LECTURE TIME';
+        if (bentoTimer) bentoTimer.textContent = formatHoursMinutes(totalChallengeSec);
+        if (bentoBanked) bentoBanked.textContent = `${slide1Min}m/slide`;
+        if (bentoSub) bentoSub.textContent = `${sr.title}: ${sessionsCount} × 25m blocks`;
+        if (bentoBtn) bentoBtn.textContent = '⚡ Open Lecture Timer';
+      }
+
+      const titleEl = document.getElementById('srActiveTitle');
+      if (!titleEl) return;
+
+      if (!probeTimer.running) {
+        const pEl = document.getElementById('probeClockText');
+        if (pEl) pEl.textContent = `${slide1Min} min`;
+      }
+
+      titleEl.textContent = sr.title;
+      document.getElementById('srTotalBankedText').textContent = `⚡ ${formatBankedTime(sr.bankedSeconds || 0)}`;
+      document.getElementById('srFormulaSlide1').textContent = `${slide1Min} min/slide`;
+      document.getElementById('srFormulaSlides').textContent = `${totalSlides} slides`;
+      document.getElementById('srTotalPredictedText').textContent = `Total = ${formatHoursMinutes(totalChallengeSec)} (${totalChallengeMins} mins)`;
+
+      const blocksEl = document.getElementById('srBlocksCountText');
+      if (blocksEl) {
+        blocksEl.textContent = `${blocks25Count} × 25m Blocks (${sessionsCount} Session${sessionsCount > 1 ? 's' : ''})`;
+      }
+
+      const slidesRemaining = Math.max(0, totalSlides - sr.currentSlide + 1);
+      const expectedSecRemaining = slidesRemaining * slide1Sec;
+      const diffMins = Math.round((srTimer.secondsLeft - expectedSecRemaining) / 60);
+      const paceStatus = diffMins >= 0 ? `Ahead by +${diffMins}m` : `Push! Behind pace`;
+
+      document.getElementById('srCurrentSprintBadge').textContent = `Slide ${sr.currentSlide} of ${totalSlides} • ${paceStatus}`;
+      document.getElementById('srClockDisplay').textContent = formatClockHMS(srTimer.secondsLeft);
+
+      const btn = document.getElementById('srToggleClockBtn');
+      if (btn) btn.textContent = srTimer.running ? '⏸ Pause' : '▶ Start Clock';
+
+      const pctDone = Math.min(100, Math.round(((sr.currentSlide - 1) / totalSlides) * 100));
+      const bar = document.getElementById('srSlideProgressBar');
+      if (bar) bar.style.width = `${Math.max(3, pctDone)}%`;
+
+      document.getElementById('srInputTitle').value = sr.title;
+      document.getElementById('srInputTotal').value = totalSlides;
+      const minInput = document.getElementById('srInputSlide1Min');
+      if (minInput) minInput.value = slide1Min;
+
+      const catBox = document.getElementById('srCategoriesList');
+      const cats = sr.completedCategories || [];
+      if (cats.length === 0) {
+        catBox.innerHTML = `<div style="background:rgba(255,255,255,0.03); border:1px dashed var(--border-strong); border-radius:12px; padding:10px 12px; font-size:11.5px; color:var(--sub); text-align:center;">Finish lectures to auto-schedule all 6 spaced revisions!</div>`;
+      } else {
+        catBox.innerHTML = cats.slice().reverse().slice(0, 6).map((c) => `
+          <div style="background:var(--emerald-soft); border:1px solid rgba(0,229,153,0.35); border-radius:12px; padding:9px 12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:12px; font-weight:800; color:#fff;">✓ ${c.title} (${c.slides} slides)</span>
+              <span class="mono" style="font-size:11px; font-weight:800; color:var(--emerald);">Saved ${formatBankedTime(c.savedSec || 0)}</span>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+<!-- ... existing code ... -->
+    window.updateSpeedrunConfig = function() {
+      const sr = getSpeedrunState();
+      sr.title = document.getElementById('srInputTitle').value.trim() || 'Lecture Slides';
+      sr.totalSlides = Math.max(1, Number(document.getElementById('srInputTotal').value || 40));
+      sr.slide1Minutes = Math.max(0.25, Number(document.getElementById('srInputSlide1Min').value || 1.0));
+      sr.slide1Seconds = Math.max(5, Math.round(sr.slide1Minutes * 60));
+      sr.currentSlide = 1;
+      srTimer.secondsLeft = sr.totalSlides * sr.slide1Seconds;
+      commitState();
+      renderSpeedrunEngine();
+    };
+<!-- ... existing code ... -->
+    function getDayCompletionPct(ymd) {
+      if (dayPctCache[ymd] !== undefined) return dayPctCache[ymd];
+      const log = state.logs[ymd];
+      if (!log) { dayPctCache[ymd] = 0; return 0; }
+      const iron = isIronDay(ymd);
+      let count = 0, sum = 0;
+      for (let i = 0; i < state.habits.length; i++) {
+        const h = state.habits[i];
+        if (state.gymOnlyMode && (h.id === 'h_study' || h.isStudyHabit)) continue;
+        if (h.schedule === 'gym3d' && !iron) continue;
+        count++;
+        const v = Number(log[h.id] || 0);
+        if (v > 0) sum += Math.min(1, v / h.target);
+      }
+      const res = count ? Math.round((sum / count) * 100) : 0;
+      dayPctCache[ymd] = res;
+      return res;
+    }
+<!-- ... existing code ... -->
+      renderHomeDueRevisionsBanner();
+      renderSpeedrunEngine();
+
+      const list = document.getElementById('habitsFeedList');
+      let cardsHtml = '';
+
+      state.habits.forEach(h => {
+        if (state.gymOnlyMode && (h.id === 'h_study' || h.isStudyHabit)) return;
+        if (h.schedule === 'gym3d' && !iron) return;
+        const val = Number(dayLog[h.id] || 0);
+        const done = val >= h.target;
+        const st = getHabitStreakFast(h);
+        const pct60 = Math.round((st.inCycle / st.cycleTarget) * 100);
+        const isGym = h.schedule === 'gym3d';
+        const isWater = h.id === 'h_water' || h.unit === 'ml';
+        const step = h.step || 1;
+<!-- ... existing code ... -->
+    function renderHomeDueRevisionsBanner() {
+      const box = document.getElementById('homeDueRevisionsBox');
+      if (!box) return;
+      if (state.gymOnlyMode) {
+        box.innerHTML = '';
+        return;
+      }
+      const due = getAllDueRevisionsForDate(state.selectedDate);
+      if (due.length === 0) {
+        box.innerHTML = '';
+        return;
+      }
+<!-- ... existing code ... -->
+      let html60 = '';
+      state.habits.forEach(h => {
+        if (state.gymOnlyMode && (h.id === 'h_study' || h.isStudyHabit)) return;
+        const st = getHabitStreakFast(h);
+        const isGym = h.schedule === 'gym3d';
+        const pct = Math.round((st.inCycle / st.cycleTarget) * 100);
+        html60 += `
+          <div class="habit-card">
+<!-- ... existing code ... -->
+      document.getElementById('bedTimeLabel').textContent = fmt(bedMins);
+      document.getElementById('cutoffTimeLabel').textContent = fmt(cutMins);
+      commitState();
+    };
+
+    function applyGymOnlyDockLayout() {
+      const dockInner = document.querySelector('.yt-bottom-dock-inner');
+      const speedBtn = document.getElementById('dockBtnSpeedrun');
+      const pharmBtn = document.getElementById('dockBtnPharm');
+      const modeBtn = document.getElementById('gymOnlyModeBtn');
+
+      if (state.gymOnlyMode) {
+        if (speedBtn) speedBtn.style.display = 'none';
+        if (pharmBtn) pharmBtn.style.display = 'none';
+        if (dockInner) dockInner.style.gridTemplateColumns = 'repeat(3, 1fr)';
+        if (modeBtn) {
+          modeBtn.textContent = '🏋️ Pure Gym-Only Mode: ON (Study Hidden)';
+          modeBtn.style.background = 'var(--emerald)';
+          modeBtn.style.color = '#022c22';
+        }
+        if (state.activeTab === 'speedrun' || state.activeTab === 'pharm') {
+          window.switchTab('home');
+        }
+      } else {
+        if (speedBtn) speedBtn.style.display = 'flex';
+        if (pharmBtn) pharmBtn.style.display = 'flex';
+        if (dockInner) dockInner.style.gridTemplateColumns = 'repeat(5, 1fr)';
+        if (modeBtn) {
+          modeBtn.textContent = '🏋️ Switch to Pure Gym-Only Mode: OFF';
+          modeBtn.style.background = 'var(--yt-red)';
+          modeBtn.style.color = '#fff';
+        }
+      }
+    }
+
+    window.toggleGymOnlyMode = function() {
+      state.gymOnlyMode = !state.gymOnlyMode;
+      invalidateCache();
+      applyGymOnlyDockLayout();
+      commitState();
+      renderActiveTabOnly();
+      window.showSilentThankYou();
+    };
+
+    function getManifestJsonString() {
+      return JSON.stringify({
+        name: state.gymOnlyMode ? "AhmadOS — Iron & 60-Day Command" : "AhmadOS — 2026 Pharmacy & Iron Command",
+        short_name: "AhmadOS",
+        description: "60-Day Streak Vault, 3-Day Iron Split (50/70/100%), 3L Hydration & Speedrun Command OS.",
+        start_url: "./index.html",
+        scope: "./",
+        display: "standalone",
+        orientation: "portrait",
+        background_color: "#030305",
+        theme_color: "#030305",
+        icons: [
+          {
+            src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='44' fill='%23ff003c'/%3E%3Cpolygon points='72,52 138,96 72,140' fill='%23ffffff'/%3E%3C/svg%3E",
+            sizes: "192x192",
+            type: "image/svg+xml",
+            purpose: "any maskable"
+          },
+          {
+            src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='116' fill='%23ff003c'/%3E%3Cpolygon points='200,148 364,256 200,364' fill='%23ffffff'/%3E%3C/svg%3E",
+            sizes: "512x512",
+            type: "image/svg+xml",
+            purpose: "any maskable"
+          }
+        ]
+      }, null, 2);
+    }
+
+    function getServiceWorkerJsString() {
+      return `const CACHE_NAME = 'ahmados-pwa-cache-v1';
+const OFFLINE_ASSETS = ['./', './index.html', './manifest.json'];
+self.addEventListener('install', (e) => {
+  e.waitUntil(caches.open(CACHE_NAME).then((c) => c.addAll(OFFLINE_ASSETS)).then(() => self.skipWaiting()));
+});
+self.addEventListener('activate', (e) => {
+  e.waitUntil(caches.keys().then((keys) => Promise.all(keys.map((k) => k !== CACHE_NAME && caches.delete(k)))).then(() => self.clients.claim()));
+});
+self.addEventListener('fetch', (e) => {
+  if (e.request.method !== 'GET') return;
+  e.respondWith(caches.match(e.request).then((res) => res || fetch(e.request)));
+});`;
+    }
+
+    function triggerFileDownload(filename, content, mimeType) {
+      const blob = new Blob([content], { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    window.downloadIndexHtmlFile = function() {
+      const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+      triggerFileDownload('index.html', fullHtml, 'text/html;charset=utf-8');
+      window.showSilentThankYou();
+    };
+
+    window.downloadGymOnlyIndexHtml = function() {
+      const prevMode = state.gymOnlyMode;
+      state.gymOnlyMode = true;
+      applyGymOnlyDockLayout();
+      renderActiveTabOnly();
+      const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+      triggerFileDownload('index.html', fullHtml, 'text/html;charset=utf-8');
+      state.gymOnlyMode = prevMode;
+      applyGymOnlyDockLayout();
+      renderActiveTabOnly();
+      window.showSilentThankYou();
+    };
+
+    window.downloadManifestFile = function() {
+      triggerFileDownload('manifest.json', getManifestJsonString(), 'application/json;charset=utf-8');
+      window.showSilentThankYou();
+    };
+
+    window.downloadSwFile = function() {
+      triggerFileDownload('sw.js', getServiceWorkerJsString(), 'application/javascript;charset=utf-8');
+      window.showSilentThankYou();
+    };
+
+    window.downloadAllThreePwaFiles = function() {
+      window.downloadIndexHtmlFile();
+      setTimeout(() => window.downloadManifestFile(), 350);
+      setTimeout(() => window.downloadSwFile(), 700);
+    };
+
+    // Direct GitHub API Auto-Publisher (Pushes index.html, manifest.json, and sw.js straight to GitHub Pages)
+    window.autoPublishToGitHubPages = async function() {
+      const user = (document.getElementById('ghUsernameInput').value || '').trim();
+      const repo = (document.getElementById('ghRepoInput').value || 'ahmados').trim();
+      const token = (document.getElementById('ghTokenInput').value || '').trim();
+      const statusEl = document.getElementById('ghPublishStatus');
+
+      if (!user || !repo || !token) {
+        if (statusEl) {
+          statusEl.style.display = 'block';
+          statusEl.style.color = '#ff4d6d';
+          statusEl.textContent = 'Please enter your GitHub Username, Repo name, and Personal Access Token (or use the Download buttons above to upload manually).';
+        }
+        return;
+      }
+
+      if (statusEl) {
+        statusEl.style.display = 'block';
+        statusEl.style.color = 'var(--cyan)';
+        statusEl.textContent = '⏳ Pushing index.html, manifest.json, and sw.js to GitHub...';
+      }
+
+      const encodeUtf8Base64 = (str) => btoa(unescape(encodeURIComponent(str)));
+      const headers = {
+        'Authorization': `Bearer ${token}`,
+        'Accept': 'application/vnd.github+json',
+        'Content-Type': 'application/json'
+      };
+
+      try {
+        // Create repo if it doesn't exist yet
+        await fetch('https://api.github.com/user/repos', {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({ name: repo, public: true, auto_init: true })
+        });
+
+        const filesToPush = [
+          { path: 'index.html', content: '<!DOCTYPE html>\n' + document.documentElement.outerHTML },
+          { path: 'manifest.json', content: getManifestJsonString() },
+          { path: 'sw.js', content: getServiceWorkerJsString() }
+        ];
+
+        for (const f of filesToPush) {
+          const url = `https://api.github.com/repos/${user}/${repo}/contents/${f.path}`;
+          let sha = undefined;
+          const existing = await fetch(url, { headers });
+          if (existing.ok) {
+            const exData = await existing.json();
+            sha = exData.sha;
+          }
+          const putRes = await fetch(url, {
+            method: 'PUT',
+            headers,
+            body: JSON.stringify({
+              message: `Deploy ${f.path} via AhmadOS PWA Publisher`,
+              content: encodeUtf8Base64(f.content),
+              ...(sha ? { sha } : {})
+            })
+          });
+          if (!putRes.ok) throw new Error(`Failed pushing ${f.path}`);
+        }
+
+        // Enable GitHub Pages on main branch
+        await fetch(`https://api.github.com/repos/${user}/${repo}/pages`, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({ source: { branch: 'main', path: '/' } })
+        });
+
+        const liveUrl = `https://${user}.github.io/${repo}/`;
+        if (statusEl) {
+          statusEl.style.color = 'var(--emerald)';
+          statusEl.innerHTML = `✓ Published! Live in ~60s at: <a href="${liveUrl}" target="_blank" style="color:#fff; text-decoration:underline;">${liveUrl}</a>`;
+        }
+        window.showSilentThankYou();
+      } catch (err) {
+        if (statusEl) {
+          statusEl.style.color = '#ff4d6d';
+          statusEl.textContent = `Could not auto-push (${err.message}). Tap "📦 Download All 3 PWA Files" above and upload them to github.com/${user}/${repo}.`;
+        }
+      }
+    };
+
+    let deferredPwaPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPwaPrompt = e;
+      const btn = document.getElementById('nativePwaInstallBtn');
+      if (btn) btn.textContent = '📲 Tap to Install AhmadOS Now!';
+    });
+
+    window.triggerNativePwaInstall = async function() {
+      if (deferredPwaPrompt) {
+        deferredPwaPrompt.prompt();
+        await deferredPwaPrompt.userChoice;
+        deferredPwaPrompt = null;
+        window.showSilentThankYou();
+      } else {
+        const statusEl = document.getElementById('ghPublishStatus');
+        if (statusEl) {
+          statusEl.style.display = 'block';
+          statusEl.style.color = 'var(--amber)';
+          statusEl.textContent = 'Once opened on your https://USERNAME.github.io/ahmados/ link in Chrome, tap this button (or Chrome ⋮ ➔ Install App) to install directly to your Home Screen!';
+        }
+      }
+    };
+
+    async function registerPwaServiceWorker() {
+      const pill = document.getElementById('swStatusPill');
+      if ('serviceWorker' in navigator) {
+        try {
+          if (location.protocol === 'https:' || location.hostname === 'localhost') {
+            await navigator.serviceWorker.register('./sw.js');
+            if (pill) pill.textContent = '● PWA INSTALLED';
+          }
+        } catch (err) {
+          if (pill) pill.textContent = '● SW READY';
+        }
+      }
+    }
+<!-- ... existing code ... -->
+    window.checkOnlineStatus = function() {
+      const badge = document.getElementById('onlineBadgeText');
+      if (!navigator.onLine) {
+        if (badge) {
+          badge.textContent = '● OFFLINE PWA';
+          badge.style.color = 'var(--amber)';
+        }
+      } else {
+        if (badge) {
+          badge.textContent = '● LIVE';
+          badge.style.color = 'var(--emerald)';
+        }
+      }
+    };
+    window.addEventListener('online', window.checkOnlineStatus);
+    window.addEventListener('offline', window.checkOnlineStatus);
+<!-- ... existing code ... -->
+    loadCache();
+    if (!state.selectedDate || state.selectedDate < TODAY_YMD) {
+      state.selectedDate = TODAY_YMD;
+      state.gymSplit = 'thursday';
+    }
+    invalidateCache();
+    applyGymOnlyDockLayout();
+    renderHomeView();
+    updateSleepWave();
+    renderSpeedrunEngine();
+    registerPwaServiceWorker();
+    initCloud();
+  </script>
+</body>
+</html>
